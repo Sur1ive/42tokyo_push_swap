@@ -1,6 +1,6 @@
 NAME	= push_swap
 SRC_DIR = srcs/
-SRCS	=
+SRCS	= main.c utilities.c
 SRCS	:= $(addprefix $(SRC_DIR), $(SRCS))
 OBJS	= $(SRCS:.c=.o)
 LIB		= ./libft/libft.a
@@ -17,7 +17,7 @@ clean:
 	make clean -C libft
 
 fclean: clean
-	rm -rf $(NAME)$(LIB)
+	rm -rf $(NAME) $(LIB)
 
 re: fclean all
 
