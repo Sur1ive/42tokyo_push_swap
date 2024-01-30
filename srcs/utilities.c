@@ -6,11 +6,23 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:50:17 by yxu               #+#    #+#             */
-/*   Updated: 2024/01/30 20:37:21 by yxu              ###   ########.fr       */
+/*   Updated: 2024/01/30 21:02:40 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	pplen(char **pp)
+{
+	int	len;
+
+	if (pp == NULL)
+		return (0);
+	len = 0;
+	while (*pp++)
+		len++;
+	return (len);
+}
 
 int	free_pp(char **pp)
 {
@@ -26,17 +38,6 @@ int	free_pp(char **pp)
 	}
 	free(pp);
 	return (0);
-}
-
-void	free_exit(t_arrs *arrs, char *msg)
-{
-	if (arrs->str_arr_malloced)
-		free_pp(arrs->str_arr);
-	free(arrs->arr);
-	if (msg == NULL)
-		exit(0);
-	write(STDERR_FILENO, msg, ft_strlen(msg));
-	exit(0);
 }
 
 static long	ft_atol(const char *str)
@@ -78,23 +79,5 @@ int	str_is_int(char *s)
 	num = ft_atol(s);
 	if (num > INT_MAX || num < INT_MIN)
 		return (0);
-	return (1);
-}
-
-
-int	check_duplicate(int *arr, int len)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < len - 1)
-	{
-		j = i + 1;
-		while (j < len)
-			if (arr[i] == arr[j++])
-				return (0);
-		i++;
-	}
 	return (1);
 }

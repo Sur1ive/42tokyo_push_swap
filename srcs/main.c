@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:07:15 by yxu               #+#    #+#             */
-/*   Updated: 2024/01/30 20:56:11 by yxu              ###   ########.fr       */
+/*   Updated: 2024/01/30 21:02:09 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,41 +48,6 @@ static void	bubble_sort(int *arr, int len)
 		i++;
 	}
 	// repeat("ra\n", count);
-}
-
-int	pplen(char **pp)
-{
-	int	len;
-
-	if (pp == NULL)
-		return (0);
-	len = 0;
-	while (*pp++)
-		len++;
-	return (len);
-}
-
-void	init_arrs(t_arrs *arrs, char **str_arr, int len)
-{
-	arrs->str_arr_malloced = 0;
-	arrs->str_arr = str_arr;
-	arrs->len = len;
-	arrs->arr = (int *)malloc(sizeof(int) * arrs->len);
-}
-
-void	strarr_to_arr(t_arrs *arrs)
-{
-	int	i;
-
-	i = 0;
-	while (arrs->str_arr[i])
-	{
-		if (str_is_int(arrs->str_arr[i]))
-			arrs->arr[i] = ft_atoi(arrs->str_arr[i]);
-		else
-			free_exit(arrs, "Error\n");
-		i++;
-	}
 }
 
 int	main(int argc, char **argv)
