@@ -6,11 +6,15 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:07:15 by yxu               #+#    #+#             */
-/*   Updated: 2024/01/30 21:02:09 by yxu              ###   ########.fr       */
+/*   Updated: 2024/01/31 22:11:53 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*  need                            */
+/*  sort 100num with <700steps      */
+/*  sort 500num with <5500steps     */
 
 // static void	repeat(char *msg, int count)
 // {
