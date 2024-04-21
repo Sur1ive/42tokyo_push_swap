@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/04/21 14:37:04 by yxu              ###   ########.fr       */
+/*   Updated: 2024/04/21 15:16:07 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,14 @@
 #  define MAX_SUPPORTED_ELEMENTS_NUM 1000
 # endif
 
-typedef struct s_arrs{
-	int		len;
-	int		str_arr_malloced;
-	char	**str_arr;
-	int		*arr;
-}	t_arrs;
+# define MALLOC_ERROR 0
+# define NUM_OF_ARGUMENTS_ERROR 1
+# define FORMAT_OF_ARGUMENTS_ERROR 2
+# define DUPLICATES_IN_ARGUMENTS 3
 
-void	free_exit(t_arrs *arrs, char *msg);
+void	error_handler(int error_num);
 int		str_is_int(char *s);
 int		check_duplicate(int *arr, int len);
-void	init_arrs(t_arrs *arrs, char **str_arr, int len);
-void	strarr_to_arr(t_arrs *arrs);
 int		doublefree(char **str_array);
 int		str_array_len(char **str_array);
 
