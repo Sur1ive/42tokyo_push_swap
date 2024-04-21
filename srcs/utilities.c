@@ -6,37 +6,37 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:50:17 by yxu               #+#    #+#             */
-/*   Updated: 2024/01/30 21:02:40 by yxu              ###   ########.fr       */
+/*   Updated: 2024/04/21 14:37:56 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	pplen(char **pp)
+int	str_array_len(char **str_array)
 {
 	int	len;
 
-	if (pp == NULL)
+	if (str_array == NULL)
 		return (0);
 	len = 0;
-	while (*pp++)
+	while (*str_array++)
 		len++;
 	return (len);
 }
 
-int	free_pp(char **pp)
+int	doublefree(char **str_array)
 {
 	int	i;
 
-	if (pp == NULL)
+	if (str_array == NULL)
 		return (0);
 	i = 0;
-	while (pp[i])
+	while (str_array[i])
 	{
-		free(pp[i]);
+		free(str_array[i]);
 		i++;
 	}
-	free(pp);
+	free(str_array);
 	return (0);
 }
 
