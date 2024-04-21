@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/04/21 16:58:36 by yxu              ###   ########.fr       */
+/*   Updated: 2024/04/21 17:14:53 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 # define FORMAT_OF_ARGUMENTS_ERROR 2
 # define DUPLICATES_IN_ARGUMENTS 3
 # define TOO_MUCH_ELEMENTS 4
+
+typedef struct s_stack
+{
+	void			*content;
+	struct s_stack	*next;
+}	t_stack;
 
 void	str_array_to_int_array(int *int_array, int *len, char **str_array);
 void	str_to_int_array(int *int_array, int *len, char *str);
