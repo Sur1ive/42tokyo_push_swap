@@ -1,6 +1,6 @@
 NAME	= push_swap
 SRC_DIR = srcs/
-SRCS	= main.c utilities.c checker.c checker_str_is_int.c
+SRCS	= main.c utilities.c checker.c array.c
 SRCS	:= $(addprefix $(SRC_DIR), $(SRCS))
 OBJS	= $(SRCS:.c=.o)
 LIB		= ./libft/libft.a
