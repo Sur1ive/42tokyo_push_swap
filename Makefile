@@ -1,6 +1,6 @@
 NAME	= push_swap
 SRC_DIR = srcs/
-SRCS	= main.c list.c checker.c array.c
+SRCS	= main.c list.c checker.c array.c stack.c
 SRCS	:= $(addprefix $(SRC_DIR), $(SRCS))
 OBJS	= $(SRCS:.c=.o)
 LIB		= ./libft/libft.a
