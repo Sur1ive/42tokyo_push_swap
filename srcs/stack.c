@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:23:45 by yxu               #+#    #+#             */
-/*   Updated: 2024/04/28 22:06:35 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/03 10:06:01 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*stacknew(int content)
 {
 	t_stack	*stack;
 
-	stack = (t_stack *)malloc(sizeof(t_stack *));
+	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (stack == NULL)
 		return (NULL);
 	stack->content = content;
@@ -61,30 +61,29 @@ void	stackclear(t_stack **stack)
 	}
 }
 
-// t_stack	**int_array_to_stack(int *int_array, int len)
-// {
-// 	int		i;
-// 	t_stack	*p;
-// 	t_stack	*top;
-// 	t_stack	**stack;
+t_stack	*int_array_to_stack(int *int_array, int len)
+{
+	int		i;
+	t_stack	*p;
+	t_stack	*top;
 
-// 	top = stacknew(int_array[0]);
-// 	if (top == NULL)
-// 		error_handler(MALLOC_ERROR);
-// 	stack = &top;
-// 	i = 1;
-// 	while (i < len)
-// 	{
-// 		p = stacknew(int_array[i]);
-// 		if (p == NULL)
-// 		{
-// 			stackclear(stack);
-// 			error_handler(MALLOC_ERROR);
-// 		}
-// 		stackadd_back(stack, p);
-// 		i++;
-// 	}
-// 	p->next = top;
-// 	top->prev = p;
-// 	return (stack);
-// }
+	p = stacknew(int_array[0]);
+	if (p == NULL)
+		error_handler(MALLOC_ERROR);
+	top = p;
+	i = 1;
+	while (i < len)
+	{
+		p = stacknew(int_array[i]);
+		if (p == NULL)
+		{
+			stackclear(&top);
+			error_handler(MALLOC_ERROR);
+		}
+		stackadd_back(&top, p);
+		i++;
+	}
+	p->next = top;
+	top->prev = p;
+	return (top);
+}
