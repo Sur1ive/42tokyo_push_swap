@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:07:15 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/03 10:35:10 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/03 21:26:03 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	int		len;
 	int		int_array[MAX_SUPPORTED_ELEMENTS_NUM];
 	t_stack	*a;
-	// t_stack	**b;
+	t_stack	*b;
 
 	if (argc < 2)
 		return (0);
@@ -39,6 +39,11 @@ int	main(int argc, char **argv)
 	if (!check_duplicate(int_array, len))
 		error_handler(DUPLICATES_IN_ARGUMENTS);
 	a = int_array_to_stack(int_array, len);
+	b = NULL;
+	push_swap(&a, &b);
+	printstack(&a);
+	printstack(&b);
 	stackclear(&a);
+	stackclear(&b);
 	return (0);
 }

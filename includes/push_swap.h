@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/02 22:20:08 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/03 21:25:34 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,18 @@ int		check_duplicate(int *arr, int len);
 void	error_handler(int error_num);
 t_stack	*int_array_to_stack(int *int_array, int len);
 void	stackclear(t_stack **stack);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+void	push_swap(t_stack **a, t_stack **b);
+void	printstack(t_stack **a);
 
 #endif
