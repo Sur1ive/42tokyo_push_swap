@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   ops_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:29:33 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/03 15:35:37 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/04 13:45:19 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,30 @@ static void	rotate(t_stack **a)
 	*a = (*a)->next;
 }
 
-void	ra(t_stack **a)
+void	ra(int n, t_stack **a)
 {
-	rotate(a);
-	ft_printf("ra\n");
+	while (n-- > 0)
+	{
+		rotate(a);
+		ft_printf("ra\n");
+	}
 }
 
-void	rb(t_stack **b)
+void	rb(int n, t_stack **b)
 {
-	rotate(b);
-	ft_printf("rb\n");
+	while (n-- > 0)
+	{
+		rotate(b);
+		ft_printf("rb\n");
+	}
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rr(int n, t_stack **a, t_stack **b)
 {
-	rotate(a);
-	rotate(b);
-	ft_printf("rr\n");
+	while (n-- > 0)
+	{
+		rotate(a);
+		rotate(b);
+		ft_printf("rr\n");
+	}
 }

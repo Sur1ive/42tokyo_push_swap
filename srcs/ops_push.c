@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ops_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:52:56 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/03 15:25:17 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/04 13:42:39 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,20 @@ static void	push(t_stack **a, t_stack **b)
 	*b = tmp;
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	pa(int n, t_stack **a, t_stack **b)
 {
-	push(b, a);
-	ft_printf("pa\n");
+	while (n-- > 0)
+	{
+		push(b, a);
+		ft_printf("pa\n");
+	}
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	pb(int n, t_stack **a, t_stack **b)
 {
-	push(a, b);
-	ft_printf("pb\n");
+	while (n-- > 0)
+	{
+		push(a, b);
+		ft_printf("pb\n");
+	}
 }

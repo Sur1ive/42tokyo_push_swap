@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 20:59:51 by yxu               #+#    #+#             */
-/*   Updated: 2024/04/21 16:59:49 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/03 23:18:20 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,22 @@ int	check_duplicate(int *arr, int len)
 		while (j < len)
 			if (arr[i] == arr[j++])
 				return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	check_sorted(int *arr, int len)
+{
+	int	i;
+
+	if (len == 1)
+		return (1);
+	i = 0;
+	while (i < len - 1)
+	{
+		if (arr[i] > arr[i + 1])
+			return (0);
 		i++;
 	}
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/03 21:25:34 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/04 13:46:20 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,31 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
+typedef struct s_ops
+{
+	int	ra;
+	int	rb;
+	int	rra;
+	int	rrb;
+
+}	t_ops;
+
 void	str_array_to_int_array(int *int_array, int *len, char **str_array);
 void	str_to_int_array(int *int_array, int *len, char *str);
 int		str_is_int(char *s);
 int		check_duplicate(int *arr, int len);
+int		check_sorted(int *arr, int len);
 void	error_handler(int error_num);
 t_stack	*int_array_to_stack(int *int_array, int len);
 void	stackclear(t_stack **stack);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	rr(t_stack **a, t_stack **b);
+void	pa(int n, t_stack **a, t_stack **b);
+void	pb(int n, t_stack **a, t_stack **b);
+void	rra(int n, t_stack **a);
+void	rrb(int n, t_stack **b);
+void	rrr(int n, t_stack **a, t_stack **b);
+void	ra(int n, t_stack **a);
+void	rb(int n, t_stack **b);
+void	rr(int n, t_stack **a, t_stack **b);
 void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
