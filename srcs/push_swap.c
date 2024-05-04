@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:47:32 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/04 17:47:20 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/04 18:46:31 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,18 @@ int	stacklen(t_stack **a)
 	return (len);
 }
 
-static void	rotate_i_to_top(int i, t_stack **b)
+static void	rotate_ia_to_top(int i, t_stack **a)
+{
+	int	len;
+
+	len = stacklen(a);
+	if (len - i > i)
+		ra(i, a);
+	else
+		rra(len - i, a);
+}
+
+static void	rotate_ib_to_top(int i, t_stack **b)
 {
 	int	len;
 
@@ -143,9 +154,9 @@ static int	min(int a, int b)
 static void	rotate_iaib_to_top(int ia, int ib, int alen, int blen, t_stack **a, t_stack **b)
 {
 	if (ia == 0)
-		rotate_i_to_top(ib, b);
+		rotate_ib_to_top(ib, b);
 	else if (ib == 0)
-		rotate_i_to_top(ia, a);
+		rotate_ia_to_top(ia, a);
 	else if (max(ia, ib) < max(alen - ia, blen - ib))
 	{
 		if (ia < ib)
@@ -217,6 +228,8 @@ static void	rotate_to_next(t_stack **a, t_stack **b)
 		ia++;
 	}
 	rotate_iaib_to_top(min_step_ia, min_step_ib, alen, blen, a, b);
+	printstack(a);
+	printstack(b);
 }
 
 void	printstack(t_stack **a)
@@ -246,7 +259,7 @@ void	push_swap(t_stack **a, t_stack **b)
 		rotate_to_next(a, b);
 		pb(1, a, b);
 	}
-	rotate_i_to_top(findstackmax(b), b);
+	rotate_ib_to_top(findstackmax(b), b);
 	while ((*b) != NULL)
 		pa(1, a, b);
 }
