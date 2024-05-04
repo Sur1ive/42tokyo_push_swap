@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:07:15 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/04 18:36:14 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/04 18:53:23 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	main(int argc, char **argv)
 	a = int_array_to_stack(int_array, len);
 	b = NULL;
 	push_swap(&a, &b);
-	printstack(&a);
-	printstack(&b);
+	// printstack(&a);
+	// printstack(&b);
 	stackclear(&a);
 	stackclear(&b);
 	return (0);

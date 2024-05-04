@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:47:32 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/04 18:46:31 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/04 18:53:35 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,8 +228,6 @@ static void	rotate_to_next(t_stack **a, t_stack **b)
 		ia++;
 	}
 	rotate_iaib_to_top(min_step_ia, min_step_ib, alen, blen, a, b);
-	printstack(a);
-	printstack(b);
 }
 
 void	printstack(t_stack **a)
