@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:47:32 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/05 23:49:56 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 00:23:01 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,25 +42,23 @@ static int	need_step(int ia, int ib, int alen, int blen)
 	return (min(max(alen - ia, blen - ib), max(ia, ib)));
 }
 
-static void	rotate_to_next(int alen, int blen, t_stack **a, t_stack **b)
+static void	rotate_for_push(t_sinfo a, t_sinfo b, int ia, int ib)
 {
 	t_stack	*tmp;
 	int		min_step;
 	int		step;
-	int		ia;
-	int		ib;
 	int		min_step_ia;
 	int		min_step_ib;
 
 	min_step_ia = 0;
-	min_step_ib = find_smaller((*a)->content, b);
-	min_step = need_step(0, min_step_ib, alen, blen);
-	tmp = (*a)->next;
+	min_step_ib = find_smaller((*a.stack)->content, b.stack);
+	min_step = need_step(0, min_step_ib, a.len, b.len);
+	tmp = (*a.stack)->next;
 	ia = 1;
-	while (tmp != *a)
+	while (tmp != *a.stack)
 	{
-		ib = find_smaller(tmp->content, b);
-		step = need_step(ia, ib, alen, blen);
+		ib = find_smaller(tmp->content, b.stack);
+		step = need_step(ia, ib, a.len, b.len);
 		if (step < min_step)
 		{
 			min_step = step;
@@ -70,7 +68,7 @@ static void	rotate_to_next(int alen, int blen, t_stack **a, t_stack **b)
 		tmp = tmp->next;
 		ia++;
 	}
-	rotate_iaib_to_top(min_step_ia, min_step_ib, genstackinfo(alen, a), genstackinfo(blen, b));
+	rotate_iaib_to_top(min_step_ia, min_step_ib, a, b);
 }
 
 void	push_swap(t_stack **a, t_stack **b)
@@ -79,12 +77,14 @@ void	push_swap(t_stack **a, t_stack **b)
 	int		blen;
 
 	pb(2, a, b);
+	alen = stacklen(a);
+	blen = stacklen(b);
 	while ((*a) != NULL)
 	{
-		alen = stacklen(a);
-		blen = stacklen(b);
-		rotate_to_next(alen, blen, a, b);
+		rotate_for_push(genstackinfo(alen, a), genstackinfo(blen, b), 0, 0);
 		pb(1, a, b);
+		alen--;
+		blen++;
 	}
 	rotate_ib_to_top(stackmaxi(b), b);
 	while ((*b) != NULL)

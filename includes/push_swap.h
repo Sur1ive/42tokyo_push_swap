@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/05 23:51:11 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 00:25:23 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "../libft/libft.h"
 
 # ifndef MAX_SUPPORTED_ELEMENTS_NUM
-#  define MAX_SUPPORTED_ELEMENTS_NUM 1000
+#  define MAX_SUPPORTED_ELEMENTS_NUM 2000
 # endif
 
 # define MALLOC_ERROR 0
