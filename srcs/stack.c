@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:23:45 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/03 17:39:38 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/05 23:42:35 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,23 @@ void	stackclear(t_stack **stack)
 			break ;
 		*stack = p;
 	}
+}
+
+int	stacklen(t_stack **a)
+{
+	t_stack	*tmp;
+	int		len;
+
+	if (*a == NULL)
+		return (0);
+	len = 1;
+	tmp = (*a)->next;
+	while (tmp != *a)
+	{
+		tmp = tmp->next;
+		len++;
+	}
+	return (len);
 }
 
 t_stack	*int_array_to_stack(int *int_array, int len)
