@@ -40,7 +40,7 @@ void	push_swap5(t_stack **a, t_stack **b)
 	{
 		rotate_ia_to_top(stackmini(a), genstackinfo(alen, a));
 		pb(1, a, b);
-		rotate_ia_to_top(stackmini(a), genstackinfo(alen, a));
+		rotate_ia_to_top(stackmini(a), genstackinfo(alen - 1, a));
 		pb(1, a, b);
 		push_swap3(a);
 		pa(2, a, b);
