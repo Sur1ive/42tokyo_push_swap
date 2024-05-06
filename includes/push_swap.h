@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 17:42:56 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 18:37:31 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@
 # define FORMAT_OF_ARGUMENTS_ERROR 3
 # define DUPLICATES_IN_ARGUMENTS 4
 # define TOO_MUCH_ELEMENTS 5
-# define READ_FAIL 6
-# define NO_SUCH_CMD 7
+# define NO_SUCH_CMD 6
 
 typedef struct s_stack
 {

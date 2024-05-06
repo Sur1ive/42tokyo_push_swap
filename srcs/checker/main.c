@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 14:26:17 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 18:02:25 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 18:41:28 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ static void	parse_cmd_sub(char *cmd, t_stack **a, t_stack **b)
 		reverse_rotate(a);
 		reverse_rotate(b);
 	}
-	else if (ft_strcmp(cmd, "\n") == 0)
-	{
-		free(cmd);
-		finalcheck(a, b);
-	}
 	else
 	{
 		free(cmd);
@@ -60,8 +55,11 @@ static void	parse_cmd_sub(char *cmd, t_stack **a, t_stack **b)
 
 static void	parse_cmd(char *cmd, t_stack **a, t_stack **b)
 {
-	if (cmd == NULL)
-		checker_error_handler(READ_FAIL, a, b);
+	if (cmd == NULL || ft_strcmp(cmd, "\n") == 0 || ft_strcmp(cmd, "\0") == 0)
+	{
+		free(cmd);
+		finalcheck(a, b);
+	}
 	else if (ft_strcmp(cmd, "sa\n") == 0)
 		swap(a);
 	else if (ft_strcmp(cmd, "sb\n") == 0)
