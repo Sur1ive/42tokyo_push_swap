@@ -13,20 +13,20 @@ OBJSB	= $(SRCSB:.c=.o)
 LIB		= ./libft/libft.a
 CC		= cc -Wall -Wextra -Werror -Iincludes
 
-%.o: %.c
-	$(CC) -Wall -Wextra -Werror -Iincludes -c $< -o $@ -fsanitize=address -g
+# %.o: %.c
+# 	$(CC) -Wall -Wextra -Werror -Iincludes -c $< -o $@ -fsanitize=address -g
 
 all: $(NAME)
 
 $(NAME): $(OBJSM)
 	make -C libft
-# $(CC) $(OBJSM) $(LIB) -o $(NAME)
-	$(CC) $(OBJSM) $(LIB) -o $(NAME) -fsanitize=address
+	$(CC) $(OBJSM) $(LIB) -o $(NAME)
+# 	$(CC) $(OBJSM) $(LIB) -o $(NAME) -fsanitize=address
 
 $(NAMEB): $(OBJSB)
 	make -C libft
-# $(CC) $(OBJSB) $(LIB) -o $(NAMEB)
-	$(CC) $(OBJSB) $(LIB) -o $(NAMEB) -fsanitize=address
+	$(CC) $(OBJSB) $(LIB) -o $(NAMEB)
+# 	$(CC) $(OBJSB) $(LIB) -o $(NAMEB) -fsanitize=address
 
 bonus: $(NAMEB)
 
