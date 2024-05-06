@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 00:25:23 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 11:31:26 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,10 @@ void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 int		max(int a, int b);
 int		min(int a, int b);
-void	rotate_ia_to_top(int i, t_stack **a);
-void	rotate_ib_to_top(int i, t_stack **b);
+void	rotate_ia_to_top(int i, t_sinfo a);
+void	rotate_ib_to_top(int i, t_sinfo b);
 void	rotate_iaib_to_top(int ia, int ib, t_sinfo a, t_sinfo b);
 void	push_swap(t_stack **a, t_stack **b);
+void	push_swap5(t_stack **a, t_stack **b);
 
 #endif

@@ -6,32 +6,26 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 23:47:11 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 00:00:51 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 11:07:38 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate_ia_to_top(int i, t_stack **a)
+void	rotate_ia_to_top(int i, t_sinfo a)
 {
-	int	len;
-
-	len = stacklen(a);
-	if (len - i > i)
-		ra(i, a);
+	if (a.len - i > i)
+		ra(i, a.stack);
 	else
-		rra(len - i, a);
+		rra(a.len - i, a.stack);
 }
 
-void	rotate_ib_to_top(int i, t_stack **b)
+void	rotate_ib_to_top(int i, t_sinfo b)
 {
-	int	len;
-
-	len = stacklen(b);
-	if (len - i > i)
-		rb(i, b);
+	if (b.len - i > i)
+		rb(i, b.stack);
 	else
-		rrb(len - i, b);
+		rrb(b.len - i, b.stack);
 }
 
 static void	rotate_iaib_up(int ia, int ib, t_stack **a, t_stack **b)
@@ -65,9 +59,9 @@ static void	rotate_iaib_down(int ia, int ib, t_sinfo a, t_sinfo b)
 void	rotate_iaib_to_top(int ia, int ib, t_sinfo a, t_sinfo b)
 {
 	if (ia == 0)
-		rotate_ib_to_top(ib, b.stack);
+		rotate_ib_to_top(ib, b);
 	else if (ib == 0)
-		rotate_ia_to_top(ia, a.stack);
+		rotate_ia_to_top(ia, a);
 	else if (max(ia, ib) < max(a.len - ia, b.len - ib))
 		rotate_iaib_up(ia, ib, a.stack, b.stack);
 	else
