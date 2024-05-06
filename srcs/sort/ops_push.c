@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:52:56 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 14:34:21 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 17:41:37 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	linknode(t_stack *node1, t_stack *node2)
 	node2->prev = node1;
 }
 
-static void	push(t_stack **a, t_stack **b)
+void	push(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 

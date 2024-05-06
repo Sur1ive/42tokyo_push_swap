@@ -1,6 +1,6 @@
 NAME	= push_swap
 SRC_DIR = srcs/sort/
-SRCS	= checker.c array.c stack.c stack2.c math.c push_swap.c push_swap5.c\
+SRCS	= checker.c array.c stack.c stack2.c stack3.c math.c push_swap.c push_swap5.c\
 	ops_swap.c ops_push.c ops_rotate.c ops_rev_rotate.c ops_rotate_advanced.c
 SRCS	:= $(addprefix $(SRC_DIR), $(SRCS))
 SRCSM	= srcs/sort/main.c $(SRCS)

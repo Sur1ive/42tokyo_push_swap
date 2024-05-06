@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops_swap.c                                         :+:      :+:    :+:   */
+/*   stack3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 18:31:55 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 17:41:56 by yxu              ###   ########.fr       */
+/*   Created: 2024/05/05 23:12:39 by yxu               #+#    #+#             */
+/*   Updated: 2024/05/06 16:23:13 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **a)
+int	stack_sorted(t_stack **a)
 {
-	int	tmp;
+	t_stack	*tmp;
 
-	if (*a == NULL || (*a)->next == *a)
-		return ;
-	tmp = (*a)->content;
-	(*a)->content = (*a)->next->content;
-	(*a)->next->content = tmp;
+	tmp = (*a)->next;
+	while (tmp != *a)
+	{
+		if (tmp->prev->content > tmp->content)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
 
-void	sa(t_stack **a)
+t_sinfo	genstackinfo(int len, t_stack **stack)
 {
-	swap(a);
-	ft_printf("sa\n");
-}
+	t_sinfo	stackinfo;
 
-void	sb(t_stack **b)
-{
-	swap(b);
-	ft_printf("sb\n");
-}
-
-void	ss(t_stack **a, t_stack **b)
-{
-	swap(a);
-	swap(b);
-	ft_printf("ss\n");
+	stackinfo.len = len;
+	stackinfo.stack = stack;
+	return (stackinfo);
 }

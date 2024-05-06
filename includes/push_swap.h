@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 15:22:13 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 17:42:56 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@
 #  define MAX_SUPPORTED_ELEMENTS_NUM 2000
 # endif
 
-# define MALLOC_ERROR 0
-# define NUM_OF_ARGUMENTS_ERROR 1
-# define FORMAT_OF_ARGUMENTS_ERROR 2
-# define DUPLICATES_IN_ARGUMENTS 3
-# define TOO_MUCH_ELEMENTS 4
+# define MALLOC_ERROR 1
+# define NUM_OF_ARGUMENTS_ERROR 2
+# define FORMAT_OF_ARGUMENTS_ERROR 3
+# define DUPLICATES_IN_ARGUMENTS 4
+# define TOO_MUCH_ELEMENTS 5
+# define READ_FAIL 6
+# define NO_SUCH_CMD 7
 
 typedef struct s_stack
 {
@@ -40,7 +42,6 @@ typedef struct s_sinfo
 
 t_stack	*parse(int argc, char **argv);
 int		check_duplicate(int *arr, int len);
-int		check_sorted(int *arr, int len);
 void	error_handler(int error_num);
 int		str_is_int(char *s);
 void	str_array_to_int_array(int *int_array, int *len, char **str_array);
@@ -50,9 +51,15 @@ void	stackclear(t_stack **stack);
 int		stacklen(t_stack **a);
 void	printstack(t_stack **a);
 int		stackmaxi(t_stack **a);
+int		stackmini(t_stack **a);
 int		stackmax(t_stack **a);
 int		stackmin(t_stack **a);
+int		stack_sorted(t_stack **a);
 t_sinfo	genstackinfo(int len, t_stack **stack);
+void	push(t_stack **a, t_stack **b);
+void	reverse_rotate(t_stack **a);
+void	rotate(t_stack **a);
+void	swap(t_stack **a);
 void	pa(int n, t_stack **a, t_stack **b);
 void	pb(int n, t_stack **a, t_stack **b);
 void	rra(int n, t_stack **a);

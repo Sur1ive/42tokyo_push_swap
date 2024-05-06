@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:47:32 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 15:24:51 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 16:10:09 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ t_stack	*parse(int argc, char **argv)
 		error_handler(FORMAT_OF_ARGUMENTS_ERROR);
 	if (!check_duplicate(int_array, len))
 		error_handler(DUPLICATES_IN_ARGUMENTS);
-	if (check_sorted(int_array, len))
-		exit (0);
 	return (int_array_to_stack(int_array, len));
 }
 

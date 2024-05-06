@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 23:12:39 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 14:34:54 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 16:23:04 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,32 @@ int	stackmaxi(t_stack **a)
 	return (max_i);
 }
 
+int	stackmini(t_stack **a)
+{
+	t_stack	*tmp;
+	int		min;
+	int		min_i;
+	int		i;
+
+	if (*a == NULL)
+		return (0);
+	tmp = (*a)->next;
+	min_i = 0;
+	min = (*a)->content;
+	i = 1;
+	while (tmp != *a)
+	{
+		if (tmp->content < min)
+		{
+			min = tmp->content;
+			min_i = i;
+		}
+		tmp = tmp->next;
+		i++;
+	}
+	return (min_i);
+}
+
 int	stackmax(t_stack **a)
 {
 	t_stack	*tmp;
@@ -101,13 +127,4 @@ int	stackmin(t_stack **a)
 		i++;
 	}
 	return (min);
-}
-
-t_sinfo	genstackinfo(int len, t_stack **stack)
-{
-	t_sinfo	stackinfo;
-
-	stackinfo.len = len;
-	stackinfo.stack = stack;
-	return (stackinfo);
 }

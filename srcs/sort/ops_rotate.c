@@ -6,13 +6,13 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:29:33 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 14:34:35 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 17:41:53 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_stack **a)
+void	rotate(t_stack **a)
 {
 	if (*a == NULL)
 		return ;

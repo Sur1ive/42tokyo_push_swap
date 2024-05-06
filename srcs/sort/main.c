@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:07:15 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 15:35:15 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 16:17:33 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int	main(int argc, char **argv)
 
 	a = parse(argc, argv);
 	b = NULL;
+	if (stack_sorted(&a))
+	{
+		stackclear(&a);
+		return (0);
+	}
 	if (stacklen(&a) <= 5)
 		push_swap5(&a, &b);
 	else
