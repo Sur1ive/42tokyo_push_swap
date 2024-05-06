@@ -6,11 +6,11 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 16:55:56 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/05 23:42:16 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 14:34:02 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static int	str_array_len(char **str_array)
 {

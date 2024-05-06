@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops_swap.c                                         :+:      :+:    :+:   */
+/*   math.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 18:31:55 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/04 13:45:45 by yxu              ###   ########.fr       */
+/*   Created: 2024/05/05 23:16:33 by yxu               #+#    #+#             */
+/*   Updated: 2024/05/06 14:34:16 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
-static void	swap(t_stack **a)
+int	max(int a, int b)
 {
-	int	tmp;
-
-	if (*a == NULL || (*a)->next == *a)
-		return ;
-	tmp = (*a)->content;
-	(*a)->content = (*a)->next->content;
-	(*a)->next->content = tmp;
+	if (a > b)
+		return (a);
+	else
+		return (b);
 }
 
-void	sa(t_stack **a)
+int	min(int a, int b)
 {
-	swap(a);
-	ft_printf("sa\n");
-}
-
-void	sb(t_stack **b)
-{
-	swap(b);
-	ft_printf("sb\n");
-}
-
-void	ss(t_stack **a, t_stack **b)
-{
-	swap(a);
-	swap(b);
-	ft_printf("ss\n");
+	if (a > b)
+		return (b);
+	else
+		return (a);
 }

@@ -6,15 +6,11 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:07:15 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 11:31:21 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 14:37:50 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-
-/*  need                            */
-/*  sort 100num with <700steps      */
-/*  sort 500num with <5500steps     */
+#include "push_swap.h"
 
 // #include <libc.h>
 // __attribute__((destructor))

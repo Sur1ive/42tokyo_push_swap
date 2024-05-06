@@ -6,11 +6,11 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 20:59:51 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/03 23:18:20 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 14:34:05 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	error_handler(int error_num)
 {

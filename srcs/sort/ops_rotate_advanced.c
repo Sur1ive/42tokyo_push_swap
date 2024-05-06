@@ -6,11 +6,11 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 23:47:11 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 11:07:38 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 14:34:30 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	rotate_ia_to_top(int i, t_sinfo a)
 {

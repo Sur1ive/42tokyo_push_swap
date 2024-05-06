@@ -6,11 +6,11 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:37:08 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/04 13:44:24 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 14:34:26 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	reverse_rotate(t_stack **a)
 {

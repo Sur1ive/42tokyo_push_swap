@@ -6,11 +6,11 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:23:45 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/05 23:42:35 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 14:35:05 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 t_stack	*stacknew(int content)
 {
