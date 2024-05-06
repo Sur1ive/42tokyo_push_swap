@@ -6,13 +6,13 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:07:15 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 14:37:50 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 15:35:15 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 // #include <libc.h>
+
 // __attribute__((destructor))
 // static void	destructor(void)
 // {
@@ -21,26 +21,12 @@
 
 int	main(int argc, char **argv)
 {
-	int		len;
-	int		int_array[MAX_SUPPORTED_ELEMENTS_NUM];
 	t_stack	*a;
 	t_stack	*b;
 
-	if (argc < 2)
-		return (0);
-	else if (argc == 2)
-		str_to_int_array(int_array, &len, argv[1]);
-	else
-		str_array_to_int_array(int_array, &len, &argv[1]);
-	if (len == 0)
-		error_handler(FORMAT_OF_ARGUMENTS_ERROR);
-	if (!check_duplicate(int_array, len))
-		error_handler(DUPLICATES_IN_ARGUMENTS);
-	if (check_sorted(int_array, len))
-		return (0);
-	a = int_array_to_stack(int_array, len);
+	a = parse(argc, argv);
 	b = NULL;
-	if (len <= 5)
+	if (stacklen(&a) <= 5)
 		push_swap5(&a, &b);
 	else
 		push_swap(&a, &b);

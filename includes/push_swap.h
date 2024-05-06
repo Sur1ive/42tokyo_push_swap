@@ -6,7 +6,7 @@
 /*   By: yxu <yxu@student.42tokyo.jp>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:39:58 by yxu               #+#    #+#             */
-/*   Updated: 2024/05/06 11:31:26 by yxu              ###   ########.fr       */
+/*   Updated: 2024/05/06 15:22:13 by yxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_sinfo
 	struct s_stack	**stack;
 }	t_sinfo;
 
+t_stack	*parse(int argc, char **argv);
 int		check_duplicate(int *arr, int len);
 int		check_sorted(int *arr, int len);
 void	error_handler(int error_num);

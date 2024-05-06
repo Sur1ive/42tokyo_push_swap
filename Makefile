@@ -1,14 +1,13 @@
 NAME	= push_swap
 SRC_DIR = srcs/sort/
-SRCS	= main.c checker.c array.c stack.c stack2.c math.c push_swap.c push_swap5.c\
+SRCS	= checker.c array.c stack.c stack2.c math.c push_swap.c push_swap5.c\
 	ops_swap.c ops_push.c ops_rotate.c ops_rev_rotate.c ops_rotate_advanced.c
 SRCS	:= $(addprefix $(SRC_DIR), $(SRCS))
-OBJS	= $(SRCS:.c=.o)
+SRCSM	= srcs/sort/main.c $(SRCS)
+OBJSM	= $(SRCSM:.c=.o)
 
 NAMEB	= checker
-SRCB_DIR = srcs/checker/
-SRCSB	=
-SRCSB	:= $(addprefix $(SRCB_DIR), $(SRCSB))
+SRCSB = srcs/checker/main.c $(SRCS)
 OBJSB	= $(SRCSB:.c=.o)
 
 LIB		= ./libft/libft.a
@@ -19,10 +18,10 @@ CC		= cc -Wall -Wextra -Werror -Iincludes
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJSM)
 	make -C libft
-# $(CC) $(OBJS) $(LIB) -o $(NAME)
-	$(CC) $(OBJS) $(LIB) -o $(NAME) -fsanitize=address
+# $(CC) $(OBJSM) $(LIB) -o $(NAME)
+	$(CC) $(OBJSM) $(LIB) -o $(NAME) -fsanitize=address
 
 $(NAMEB): $(OBJSB)
 	make -C libft
@@ -32,11 +31,11 @@ $(NAMEB): $(OBJSB)
 bonus: $(NAMEB)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJSM) $(OBJSB)
 	make clean -C libft
 
 fclean: clean
-	rm -rf $(NAME) $(LIB)
+	rm -rf $(NAME) $(NAMEB) $(LIB)
 
 re: fclean all
 
