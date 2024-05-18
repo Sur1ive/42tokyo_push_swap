@@ -18,7 +18,7 @@ less than 8500  -> 3<br>
 less than 10000 -> 2<br>
 less than 11500 -> 1<br>
 
-I got 5 in sorting hundred numbers and 4 in sorting five hundred numbers.(not perfect)<br>
+I got 5 in sorting hundred numbers and 4 in sorting five hundred numbers, and 112% as the final grade.(not perfect)<br>
 
 ## NOTICE 
 42 Project must be written in accordance with the 42 school norm, otherwise the grade is 0:
