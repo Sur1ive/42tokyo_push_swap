@@ -2,7 +2,7 @@
 # 
 **Final grade: 112%**:white_check_mark:</br>
 
-## How to use
+This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves. To make this happen, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
 
 ## NOTICE 
 42 Project must be written in accordance with the 42 school norm, otherwise the grade is 0:
